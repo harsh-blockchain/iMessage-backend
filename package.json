@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts",
-    "start": "ts-node src/index.ts",
-    "build": "npx prisma generate --schema=src/prisma/schema.prisma && ts-node src/index.ts"
+    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e ts,graphql",
+    "build": "tsc -p . && ncp src/prisma/schema dist/prisma/schema",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "lodash.merge": "^4.6.2",
     "next-auth": "^4.19.2",
     "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20",
     "ws": "^8.12.1"
   },
   "devDependencies": {
