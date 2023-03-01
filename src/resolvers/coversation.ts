@@ -1,8 +1,11 @@
-import { CreateConversationInput } from "./../../../frontend/src/utils/types";
 import { GraphQLError } from "graphql";
 import { ConversationPopulated, GraphQlContext } from "./../utils/types";
 import { Prisma } from "@prisma/client";
 import { withFilter } from "graphql-subscriptions";
+
+export interface CreateConversationInput {
+  participantIds: Array<string>;
+}
 
 const ConversationsResolvers = {
   Query: {

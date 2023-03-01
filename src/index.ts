@@ -109,6 +109,4 @@ async function main(typeDefs: any, resolvers: any) {
   console.log(`🚀 Server ready at http://localhost:${port}/graphql`);
 }
 
-main(typeDefs, resolvers).catch((error) => {
-  console.error(error);
-});
+main(typeDefs, resolvers);
